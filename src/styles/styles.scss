@@ -1,0 +1,200 @@
+@import 'vue-context/src/sass/vue-context.scss';
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/assets/fonts/SFProDisplay-Heavy.woff2') format('woff2'),
+       url('/assets/fonts/SFProDisplay-Heavy.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/assets/fonts/SFProDisplay-Semibold.woff2') format('woff2'),
+       url('/assets/fonts/SFProDisplay-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/assets/fonts/SFProDisplay-Medium.woff2') format('woff2'),
+      url('/assets/fonts/SFProDisplay-Medium.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/assets/fonts/SFProDisplay-Bold.woff2') format('woff2'),
+      url('/assets/fonts/SFProDisplay-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+::selection {
+  background: rgba($primary, .99); /* WebKit/Blink Browsers */
+  color: $body-bg;
+}
+::-moz-selection {
+  background: rgba($primary, .99); /* Gecko Browsers */
+  color: $body-bg;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+}
+
+#app {
+  font-family: 'SF Pro Display', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: url('/img/bg.jpg');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.text-heavy {
+  font-weight: 800;
+}
+
+.unselectable {
+  @include unselectable;
+}
+
+.row {
+  margin: 0;
+}
+.no-wrap {
+  white-space: nowrap;
+}
+
+button.btn {
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  &.btn-sidebar {
+    color: $accent-darker;
+    text-align: left;
+    width: 100%;
+    padding: .25em .5em;
+    font-size: 1.1rem;
+    i {
+      text-align: center;
+      font-size: 1.25em;
+      width: 1.25em;
+      margin-right: .4em;
+    }
+    &:hover:not(.active) {
+      background: $accent;
+    }
+    &.active {
+      color: $default;
+      cursor: default;
+      background: $accent;
+      i { color: $default; }
+    }
+  }
+  &.btn-toolbar {
+    background: $accent;
+    height: 28px;
+    width: 28px;
+    padding: 0;
+    justify-content: center;
+    &:hover {
+      background: $accent-dark;
+    }
+  }
+  &.btn-x {
+    font-size: .9em;
+    padding: .4em .5em;
+    &:hover {
+      background: $accent;
+    }
+  }
+  &.btn-new-tab {
+    height: $tab-height;
+    width: $tab-height;
+    border-radius: 0;
+    font-size: .8em;
+    &:hover {
+      background: $accent;
+    }
+  }
+}
+.btn-block + .btn-block {
+  margin-top: .25em;
+}
+
+.path-btn {
+  border-radius: .15em;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 .1em;
+  padding: .05em .1em;
+  &:hover {
+    background: $accent;
+  }
+}
+
+.search-bar {
+  position: relative;
+  &.local {
+    min-width: 250px;
+  }
+  i.search-icon {
+    position: absolute;
+    color: rgba(#fff, .4);
+    height: 1em;
+    top: 0;
+    bottom: 0;
+    left: .6em;
+    margin: auto;
+  }
+  input.form-control {
+    padding-left: 2em;
+  }
+}
+
+#drag-ghost {
+  border-radius: $border-radius;
+  background: $body-bg;
+  padding: .5rem 1rem;
+  display: flex;
+  align-items: center;
+  top: -100px;
+  position: absolute;
+}
+
+ul.contextmenu {
+  backdrop-filter: blur(20px);
+  background: transparent;
+  padding: 0;
+  min-width: 175px;
+  li {
+    padding: .3em 1em;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    &:hover {
+      background: $accent;
+    }
+  }
+}
+
+.being-dragged {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+  background: $primary;
+}

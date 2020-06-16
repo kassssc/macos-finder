@@ -1,0 +1,103 @@
+// Colors
+$blue:    #4F9AC3;
+$indigo:  #6610f2;
+$purple:  #8F79C1;
+$pink:    #be5877;
+$red:     #EF6E62;
+$orange:  #E49658;
+$yellow:  #F6BE4F;
+$green:   #61C856;
+$teal:    #7DB9B9;
+
+//*/
+$accent-darker: rgba(#fff, .6);
+$accent-dark:   rgba(#fff, .25);
+$accent:        rgba(#fff, .12);
+$accent-light:  rgba(#fff, .04);
+
+// Theme Colors
+$primary:       $teal;
+$secondary:     $accent;
+$light:         #2A2B29;
+$medium:        #807E7D;
+$dark:          #B5B1AE;
+$default:       #E3E3E3;
+
+$muted:         #666666;
+$placeholder:   rgba(#fff, .4);
+
+$yiq-text-dark:   $light;
+$yiq-text-light:  $default;
+
+// Add theme colors
+$theme-colors: (
+  "medium":   $medium,
+  "default":  $default
+);
+$theme-colors: map-remove($theme-colors,
+  "success", "info", "danger", "warning"
+);
+
+$yiq-contrasted-threshold: 200;
+
+$body-bg:       $light;
+$body-color:    $default;
+
+// Headings
+$headings-font-weight:    600;
+$headings-margin-bottom:  0;
+$h5-font-size:            1.2rem;
+
+$text-muted:    $muted;
+
+// Borders
+$border-radius:     .25rem;
+$border-radius-sm:  .1rem;
+
+// Input & Buttons
+$input-btn-border-width:  0;
+$input-btn-font-size:     1rem;
+$input-btn-padding-y:     .25rem;
+
+// Buttons
+$btn-font-weight:       700;
+$btn-transition:        none;
+$btn-white-space:       nowrap;
+$btn-border-radius-sm:  $border-radius;
+
+// Forms
+$label-margin-bottom:     .1em;
+$input-font-weight:       600;
+$input-bg:                $accent;
+$input-disabled-bg:       $accent-light;
+$input-color:             $default;
+$input-border-color:      transparent;
+$input-border-width:      0;
+$input-placeholder-color: $placeholder;
+$input-focus-box-shadow:  0 0 0 .25rem rgba($primary, .65);
+$input-padding-y-sm:  0;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1300px
+);
+
+// Import Bootstrap variables for override
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/_mixins.scss";
+
+@mixin unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+$sidebar-margin-x: 1.25rem;
+$tab-height: 30px;
